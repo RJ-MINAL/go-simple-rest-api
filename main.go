@@ -19,6 +19,8 @@ type Address struct {
 	State string `json:"state,omitempty"`
 }
 
+var people []Person
+
 func getPeopleEndpoint(w http.ResponseWriter, r *http.Request) {
 
 }
@@ -37,6 +39,9 @@ func deletePersonEndpoint(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	router := mux.NewRouter()
+
+	people = append(people, Person{ID: "1", FirstName: "Ryan", LastName: "Ray", Address: &Address{City: "Dublin", State: "California"}})
+	people = append(people, Person{ID: "2", FirstName: "Joe", LastName: "DiMagio"})
 
 	// endpoints
 	router.HandleFunc("/api/people", getPeopleEndpoint).Methods("GET")
