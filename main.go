@@ -11,6 +11,7 @@ import (
 	"github.com/gorilla/mux"
 )
 
+// Person holds mock data
 type Person struct {
 	ID        string   `json:"id,omitempty"`
 	FirstName string   `json:"firstname,omitempty"`
@@ -18,6 +19,7 @@ type Person struct {
 	Address   *Address `json:"address,omitempty"`
 }
 
+// Address holds address mock data
 type Address struct {
 	City  string `json:"city,omitempty"`
 	State string `json:"state,omitempty"`
